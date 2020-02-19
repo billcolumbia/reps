@@ -1,170 +1,686 @@
-:root {
-  --purple: #B27EE2;
-  --green: #9FDD69;
-  --blue: #69B3DD;
-  --white: #FCFCFD;
-  --gray-lightest: #F5F5F5;
-  --gray-light: #F0F0F1;
-  --gray-dark: #858B8E;
-  --black: #1F2528;
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-* { box-sizing: border-box; }
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
 
 body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+:root {
+  --black: #1F2528;
+  --gray-dark: #4C5A62;
+  --gray: #DAE2E7;
+  --gray-light: #E9EBEC;
+  --white: #FAFAFA;
+  --blue: #1896DC;
+  --blue-dark: #0877B4;
+  --green: #12BF7A;
+  --green-dark: #08965D;
+}
+
+/*
+  Colors
+*/
+
+.c-black {
+  color: #1F2528;
+  color: var(--black);
+}
+
+.c-gray-dark {
+  color: #4C5A62;
+  color: var(--gray-dark);
+}
+
+.c-gray {
+  color: #DAE2E7;
+  color: var(--gray);
+}
+
+.c-gray-light {
+  color: #E9EBEC;
+  color: var(--gray-light);
+}
+
+.c-white {
+  color: #FAFAFA;
+  color: var(--white);
+}
+
+.c-blue {
+  color: #1896DC;
+  color: var(--blue);
+}
+
+.c-blue-dark {
+  color: #0877B4;
+  color: var(--blue-dark);
+}
+
+.c-green {
+  color: #12BF7A;
+  color: var(--green);
+}
+
+.c-green-dark {
+  color: #08965D;
+  color: var(--green-dark);
+}
+
+/*
+  Background Colors
+*/
+
+.bg-black {
+  background-color: #1F2528;
+  background-color: var(--black);
+}
+
+.bg-gray-dark {
+  background-color: #4C5A62;
+  background-color: var(--gray-dark);
+}
+
+.bg-gray {
+  background-color: #DAE2E7;
+  background-color: var(--gray);
+}
+
+.bg-gray-light {
+  background-color: #E9EBEC;
+  background-color: var(--gray-light);
+}
+
+.bg-white {
+  background-color: #FAFAFA;
+  background-color: var(--white);
+}
+
+.bg-blue {
+  background-color: #1896DC;
+  background-color: var(--blue);
+}
+
+.bg-blue-dark {
+  background-color: #0877B4;
+  background-color: var(--blue-dark);
+}
+
+.bg-green {
+  background-color: #12BF7A;
+  background-color: var(--green);
+}
+
+.bg-green-dark {
+  background-color: #08965D;
+  background-color: var(--green-dark);
+}
+
+:root {
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+}
+
+:root {
+  --scale-1: 14px;
+  --scale-2: 16px;
+  --scale-3: 18px;
+  --scale-4: 21px;
+  --scale-5: 24px;
+  --weight-1: 300;
+  --weight-2: 400;
+  --weight-3: 500;
+  --weight-4: 700;
+}
+
+body {
+  color: #4C5A62;
   color: var(--gray-dark);
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
   font-size: 21px;
   line-height: 28px;
 }
 
-.FormValidator {
-  background-color: #C1CFD7;
+.Heading--1 {
+  font-size: 24px;
+  font-size: var(--scale-5);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.PadX--Med {
+.Heading__Supplement {
+  font-size: 16px;
+  font-size: var(--scale-2);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+* { box-sizing: border-box; }
+
+.pad-x--lg {
   padding-left: 32px;
+  padding-left: var(--spacing-lg);
   padding-right: 32px;
+  padding-right: var(--spacing-lg);
 }
 
-.PadY--Med {
+.pad-y--lg {
   padding-top: 32px;
+  padding-top: var(--spacing-lg);
   padding-bottom: 32px;
+  padding-bottom: var(--spacing-lg);
 }
 
-.MarginX--Med {
-  margin-left: 24px;
-  margin-right: 24px;
+.pad-x--md {
+  padding-left: 16px;
+  padding-left: var(--spacing-md);
+  padding-right: 16px;
+  padding-right: var(--spacing-md);
 }
 
-.MarginY--Med {
-  margin-top: 32px;
-  margin-bottom: 32px;
+.pad-y--md {
+  padding-top: 16px;
+  padding-top: var(--spacing-md);
+  padding-bottom: 16px;
+  padding-bottom: var(--spacing-md);
 }
 
-.MB--Med {
-  margin-bottom: 24px;
-}
-
-.Container {
-  max-width: 380px;
+.margin-x--auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-.Heading--1 {
-  color: var(--black);
-  font-size: 24px;
-  transform: translateY(.73em);
-  margin-top: 0;
+.margin-y--lg {
+  margin-top: 32px;
+  margin-top: var(--spacing-lg);
+  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
 }
 
-.Heading--1::before {
-  content: "";
-  margin-top: -26px;
-  display: block;
-  height: 0;
-}
+/*
+  Form Wrapper
+*/
 
-.Heading__Supplement {
-  color: var(--gray-dark);
-  font-size: 14px;
-  margin-bottom: -12px;
-}
-
-.Form {
+.FormWrapper {
+  max-width: 380px;
+  background-color: #FAFAFA;
   background-color: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(154, 179, 193, .88);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.12);
   overflow: hidden;
 }
 
-.Form__Controls {
-  background-color: #ECF1F3;
-  padding-top: 46px;
-  padding-bottom: 32px;
-}
+/*
+  Form Control
+*/
 
 .Form__Control {
-  width: 100%;
-  padding-bottom: 38px;
+  position: relative;
 }
 
-.Form__Control:last-child {
-  padding-bottom: 0;
+.Form__Control + .Form__Control {
+  margin-top: 16px;
+  margin-top: var(--spacing-md);
 }
+
+/*
+  Form Label
+*/
 
 .Form__Label {
   display: block;
   font-size: 14px;
-  transform: translateY(.64em);
-  margin-bottom: -24px;
-  padding-left: 12px;
-  font-weight: 600;
+  font-size: var(--scale-1);
+  font-weight: 500;
+  font-weight: var(--weight-3);
+  position: absolute;
   transition: 160ms color ease;
+  /*
+    -8px puts cap height to top edge of input,
+    so 12px down from there is 4px
+  */
+  top: 4px;
+  left: 12px;
+  left: var(--spacing-sm);;
 }
 
-.tester {
-  background-color: red;
-  height: 8px;
-}
+/*
+  Form Input
+*/
 
-.Form__Label::before {
-  content: "";
-  margin-top: -18px;
-  display: block;
-  height: 0;
-}
-
-.Form__Input {
-
-}
-
-.Form__Label--focused {
-  color: var(--blue);
-}
+/* .Form__Input {} */
 
 .Form__Input--text {
   border-radius: 3px;
   border: none;
-  background-color: var(--gray-light);
+  background-color: #FAFAFA;
   background-color: var(--white);
   padding-top: 32px;
+  padding-top: var(--spacing-lg);
   padding-left: 12px;
+  padding-left: var(--spacing-sm);
   padding-right: 12px;
+  padding-right: var(--spacing-sm);
   padding-bottom: 12px;
+  padding-bottom: var(--spacing-sm);
+  color: #1F2528;
+  color: var(--black);
   display: block;
   max-width: 100%;
   width: 100%;
   transition: 160ms box-shadow ease;
 }
 
-.Form__Input--text:hover {
-  box-shadow: 0 0 0 2px var(--gray-dark);
-}
-
-.Form__Input--text:focus {
-  box-shadow: 0 0 0 2px var(--blue);
-}
-
-.Form__Input--text::placeholder {
+.Form__Input--text::-webkit-input-placeholder {
+  color: #4C5A62;
   color: var(--gray-dark);
   font-weight: 300;
 }
 
+.Form__Input--text::-moz-placeholder {
+  color: #4C5A62;
+  color: var(--gray-dark);
+  font-weight: 300;
+}
+
+.Form__Input--text:-ms-input-placeholder {
+  color: #4C5A62;
+  color: var(--gray-dark);
+  font-weight: 300;
+}
+
+.Form__Input--text::-ms-input-placeholder {
+  color: #4C5A62;
+  color: var(--gray-dark);
+  font-weight: 300;
+}
+
+.Form__Input--text::placeholder {
+  color: #4C5A62;
+  color: var(--gray-dark);
+  font-weight: 300;
+}
+
+.Form__Input--text:hover {
+  box-shadow: 0 0 0 2px #4C5A62;
+  box-shadow: 0 0 0 2px var(--gray-dark);
+}
+
+.Form__Input--text:focus {
+  box-shadow: 0 0 0 2px #1896DC;
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+/*
+  Form Submit Button
+*/
+
 .Form__Submit {
-  -moz-appearance: none;
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
-  background-color: #34A2DF;
+  background-color: #0877B4;
+  background-color: var(--blue-dark);
+  color: #FAFAFA;
   color: var(--white);
   padding-top: 16px;
+  padding-top: var(--spacing-md);
   padding-right: 12px;
+  padding-right: var(--spacing-sm);
   padding-left: 12px;
-  padding-bottom: 17px;
+  padding-left: var(--spacing-sm);
+  padding-bottom: calc(16px + 1px);
+  padding-bottom: calc(var(--spacing-md) + 1px);
   text-align: center;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 21px;
+  font-size: var(--scale-4);
   line-height: 1;
   width: 100%;
   border-radius: 3px;
@@ -173,11 +689,24 @@ body {
 }
 
 .Form__Submit:hover {
+  background-color: #1896DC;
   background-color: var(--blue);
 }
 
 .Form__Submit:focus {
+  background-color: #1896DC;
   background-color: var(--blue);
-  box-shadow: 0 0 0 2px #34A2DF;
+  box-shadow: 0 0 0 2px #0877B4;
+  box-shadow: 0 0 0 2px var(--blue-dark);
   outline: none;
+}
+
+.Form__Control[focus-within] .Form__Label {
+  color: #1896DC;
+  color: var(--blue);
+}
+
+.Form__Control:focus-within .Form__Label {
+  color: #1896DC;
+  color: var(--blue);
 }

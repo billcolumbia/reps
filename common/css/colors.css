@@ -1,0 +1,89 @@
+:root {
+  --black: #1F2528;
+  --gray-dark: #4C5A62;
+  --gray: #DAE2E7;
+  --gray-light: #E9EBEC;
+  --white: #FAFAFA;
+  --blue: #1896DC;
+  --blue-dark: #0877B4;
+  --green: #12BF7A;
+  --green-dark: #08965D;
+}
+
+/*
+  Colors
+*/
+.c-black {
+  color: var(--black);
+}
+
+.c-gray-dark {
+  color: var(--gray-dark);
+}
+
+.c-gray {
+  color: var(--gray);
+}
+
+.c-gray-light {
+  color: var(--gray-light);
+}
+
+.c-white {
+  color: var(--white);
+}
+
+.c-blue {
+  color: var(--blue);
+}
+
+.c-blue-dark {
+  color: var(--blue-dark);
+}
+
+.c-green {
+  color: var(--green);
+}
+
+.c-green-dark {
+  color: var(--green-dark);
+}
+
+/*
+  Background Colors
+*/
+.bg-black {
+  background-color: var(--black);
+}
+
+.bg-gray-dark {
+  background-color: var(--gray-dark);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.bg-gray-light {
+  background-color: var(--gray-light);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-blue-dark {
+  background-color: var(--blue-dark);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-green-dark {
+  background-color: var(--green-dark);
+}

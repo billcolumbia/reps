@@ -1,0 +1,114 @@
+@import "../common/css/normalize.css";
+@import "../common/css/colors.css";
+@import "../common/css/spacing.css";
+@import "../common/css/forms.css";
+@import "../common/css/typography.css";
+@import "../common/css/layout.css";
+
+/*
+  Form Wrapper
+*/
+.FormWrapper {
+  max-width: 380px;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.12);
+  overflow: hidden;
+}
+
+/*
+  Form Control
+*/
+.Form__Control {
+  position: relative;
+}
+
+.Form__Control + .Form__Control {
+  margin-top: var(--spacing-md);
+}
+
+/*
+  Form Label
+*/
+.Form__Label {
+  display: block;
+  font-size: var(--scale-1);
+  font-weight: var(--weight-3);
+  position: absolute;
+  transition: 160ms color ease;
+  /*
+    -8px puts cap height to top edge of input,
+    so 12px down from there is 4px
+  */
+  top: 4px;
+  left: var(--spacing-sm);;
+}
+
+/*
+  Form Input
+*/
+/* .Form__Input {} */
+
+.Form__Input--text {
+  border-radius: 3px;
+  border: none;
+  background-color: var(--white);
+  padding-top: var(--spacing-lg);
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  color: var(--black);
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  transition: 160ms box-shadow ease;
+}
+
+.Form__Input--text::placeholder {
+  color: var(--gray-dark);
+  font-weight: 300;
+}
+
+.Form__Input--text:hover {
+  box-shadow: 0 0 0 2px var(--gray-dark);
+}
+
+.Form__Input--text:focus {
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+/*
+  Form Submit Button
+*/
+.Form__Submit {
+  appearance: none;
+  border: none;
+  background-color: var(--blue-dark);
+  color: var(--white);
+  padding-top: var(--spacing-md);
+  padding-right: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+  padding-bottom: calc(var(--spacing-md) + 1px);
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--scale-4);
+  line-height: 1;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 160ms background-color ease, 160ms box-shadow ease;
+}
+
+.Form__Submit:hover {
+  background-color: var(--blue);
+}
+
+.Form__Submit:focus {
+  background-color: var(--blue);
+  box-shadow: 0 0 0 2px var(--blue-dark);
+  outline: none;
+}
+
+.Form__Control:focus-within .Form__Label {
+  color: var(--blue);
+}

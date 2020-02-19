@@ -4,13 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "browser-sync start --proxy=localhost:5000 --files='**/*.css,**/*.html,**/*.js' --port=3000 --no-ghost-mode --no-ui --no-notify -w"
+    "bsync": "browser-sync start --proxy=localhost:5000 --files='**/*.css,**/*.html,**/*.js' --port=3000 --no-ghost-mode --no-ui --no-notify -w",
+    "css": "postcss -w ./form-validation/index.css --output=./form-validation/public/index.css",
+    "dev": "run-p bsync css"
   },
   "author": "Bill Columbia",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^9.7.4",
     "browser-sync": "^2.26.7",
     "express": "^4.17.1",
-    "http-server": "^0.12.1"
-  }
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.27",
+    "postcss-calc": "^7.0.2",
+    "postcss-cli": "^7.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0"
+  },
+  "dependencies": {}
 }

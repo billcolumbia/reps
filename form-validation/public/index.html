@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="index.css">
     <title>Form Validator</title>
   </head>
-  <body class="FormValidator">
-    <div class="Container">
-      <form method="POST" action="/handle-form" id="Form-0000" class="Form MarginY--Med">
-        <header class="PadX--Med PadY--Med">
-          <h1 class="Heading--1">Register</h1>
+  <body class="bg-gray">
+    <div class="FormWrapper bg-white margin-x--auto margin-y--lg">
+      <form method="POST" action="/handle-register" id="Form-0000" class="Form">
+        <header class="pad-x--md pad-y--md">
+          <h1 class="Heading--1 c-black">Register</h1>
           <p class="Heading__Supplement">
             Create an account
           </p>
         </header>
-        
-        <section class="Form__Controls PadX--Med">
+
+        <section class="Form__Controls pad-x--md pad-y--md bg-gray-light">
           <div class="Form__Control">
             <label class="Form__Label" for="username">Username</label>
             <input class="Form__Input Form__Input--text" type="text" id="username" name="username" placeholder="Enter username">
@@ -33,7 +32,7 @@
           </div>
           <div class="Form__Control">
             <button class="Form__Submit" type="submit">
-              Register
+              Register &rarr;
             </button>
           </div>
         </section>
