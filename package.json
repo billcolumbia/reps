@@ -1,0 +1,16 @@
+{
+  "name": "vanilla-js",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start --proxy=localhost:5000 --files='**/*.css,**/*.html,**/*.js' --port=3000 --no-ghost-mode --no-ui --no-notify -w"
+  },
+  "author": "Bill Columbia",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "express": "^4.17.1",
+    "http-server": "^0.12.1"
+  }
+}
