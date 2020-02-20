@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Dist Patch - Shared" pattern="!file:.editorconfig&amp;&amp;!file:.gitignore&amp;&amp;!file:.nvmrc&amp;&amp;!file:package-lock.json&amp;&amp;!file:form-validation/public/index.css" />
+</component>
