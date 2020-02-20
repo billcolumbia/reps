@@ -359,105 +359,53 @@ template {
   --blue-dark: #0877B4;
   --green: #12BF7A;
   --green-dark: #08965D;
+  --purple-dark: #8022D8;
+  --red-dark: #B62F11;
 }
 
 /*
   Colors
 */
 
-.c-black {
-  color: #1F2528;
-  color: var(--black);
-}
+.c-black { color: #1F2528; color: var(--black); }
 
-.c-gray-dark {
-  color: #4C5A62;
-  color: var(--gray-dark);
-}
+.c-gray-dark { color: #4C5A62; color: var(--gray-dark); }
 
-.c-gray {
-  color: #DAE2E7;
-  color: var(--gray);
-}
+.c-gray { color: #DAE2E7; color: var(--gray); }
 
-.c-gray-light {
-  color: #E9EBEC;
-  color: var(--gray-light);
-}
+.c-gray-light { color: #E9EBEC; color: var(--gray-light); }
 
-.c-white {
-  color: #FAFAFA;
-  color: var(--white);
-}
+.c-white { color: #FAFAFA; color: var(--white); }
 
-.c-blue {
-  color: #1896DC;
-  color: var(--blue);
-}
+.c-blue { color: #1896DC; color: var(--blue); }
 
-.c-blue-dark {
-  color: #0877B4;
-  color: var(--blue-dark);
-}
+.c-blue-dark { color: #0877B4; color: var(--blue-dark); }
 
-.c-green {
-  color: #12BF7A;
-  color: var(--green);
-}
+.c-green { color: #12BF7A; color: var(--green); }
 
-.c-green-dark {
-  color: #08965D;
-  color: var(--green-dark);
-}
+.c-green-dark { color: #08965D; color: var(--green-dark); }
 
 /*
   Background Colors
 */
 
-.bg-black {
-  background-color: #1F2528;
-  background-color: var(--black);
-}
+.bg-black { background-color: #1F2528; background-color: var(--black); }
 
-.bg-gray-dark {
-  background-color: #4C5A62;
-  background-color: var(--gray-dark);
-}
+.bg-gray-dark { background-color: #4C5A62; background-color: var(--gray-dark); }
 
-.bg-gray {
-  background-color: #DAE2E7;
-  background-color: var(--gray);
-}
+.bg-gray { background-color: #DAE2E7; background-color: var(--gray); }
 
-.bg-gray-light {
-  background-color: #E9EBEC;
-  background-color: var(--gray-light);
-}
+.bg-gray-light { background-color: #E9EBEC; background-color: var(--gray-light); }
 
-.bg-white {
-  background-color: #FAFAFA;
-  background-color: var(--white);
-}
+.bg-white { background-color: #FAFAFA; background-color: var(--white); }
 
-.bg-blue {
-  background-color: #1896DC;
-  background-color: var(--blue);
-}
+.bg-blue { background-color: #1896DC; background-color: var(--blue); }
 
-.bg-blue-dark {
-  background-color: #0877B4;
-  background-color: var(--blue-dark);
-}
+.bg-blue-dark { background-color: #0877B4; background-color: var(--blue-dark); }
 
-.bg-green {
-  background-color: #12BF7A;
-  background-color: var(--green);
-}
+.bg-green { background-color: #12BF7A; background-color: var(--green); }
 
-.bg-green-dark {
-  background-color: #08965D;
-  background-color: var(--green-dark);
-}
+.bg-green-dark { background-color: #08965D; background-color: var(--green-dark); }
 
 :root {
   --spacing-xs: 8px;
@@ -498,7 +446,21 @@ body {
   font-size: var(--scale-2);
   margin-top: 0;
   margin-bottom: 0;
+  line-height: 1.4;
 }
+
+.VisuallyHidden {
+  /* https://a11yproject.com/posts/how-to-hide-content/ */
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.ta-center { text-align: center; }
 
 * { box-sizing: border-box; }
 
@@ -533,6 +495,11 @@ body {
 .margin-x--auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.margin-b--md {
+  margin-bottom: 16px;
+  margin-bottom: var(--spacing-md);
 }
 
 .margin-y--lg {
@@ -646,14 +613,14 @@ body {
   font-weight: 300;
 }
 
-.Form__Input--text:hover {
+.Form__Control:hover {
+  border-radius: 3px;
   box-shadow: 0 0 0 2px #4C5A62;
   box-shadow: 0 0 0 2px var(--gray-dark);
 }
 
 .Form__Input--text:focus {
-  box-shadow: 0 0 0 2px #1896DC;
-  box-shadow: 0 0 0 2px var(--blue);
+  /* box-shadow: 0 0 0 2px var(--blue); */
 }
 
 /*
@@ -701,12 +668,88 @@ body {
   outline: none;
 }
 
-.Form__Control[focus-within] .Form__Label {
-  color: #1896DC;
-  color: var(--blue);
+.Form__Control[focus-within] {
+  box-shadow: 0 0 0 2px #1896DC;
+  box-shadow: 0 0 0 2px var(--blue);
+  border-radius: 3px
 }
 
+.Form__Control:focus-within {
+  box-shadow: 0 0 0 2px #1896DC;
+  box-shadow: 0 0 0 2px var(--blue);
+  border-radius: 3px
+}
+
+.Form__Control[focus-within] .Form__Label {
+    color: #1896DC;
+    color: var(--blue);
+  }
+
 .Form__Control:focus-within .Form__Label {
-  color: #1896DC;
-  color: var(--blue);
+    color: #1896DC;
+    color: var(--blue);
+  }
+
+@-webkit-keyframes fadeMessage {
+  0% { opacity: 0; height: 0; }
+  100% { opacity: 1; height: 28px; }
+}
+
+@keyframes fadeMessage {
+  0% { opacity: 0; height: 0; }
+  100% { opacity: 1; height: 28px; }
+}
+
+.Form__Required {
+  color: #B62F11;
+  color: var(--red-dark);
+}
+
+.Form__Message {
+  background-color: #F1F2F3;
+  font-size: 14px;
+  font-size: var(--scale-1);
+  font-weight: 500;
+  font-weight: var(--weight-3);
+  color: #B62F11;
+  color: var(--red-dark);
+  margin-top: -3px;
+  padding-left: 12px;
+  margin-bottom: 24px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  /* animation: 160ms fadeMessage ease; */
+}
+
+.Form__Message[aria-hidden=true] {
+  display: none;
+}
+
+.Form__Message[aria-hidden=false] {
+  display: block;
+}
+
+.Form__Message__Icon {
+  height: 15px;
+  width: 15px;
+  top: 2px;
+  right: 12px;
+  right: var(--spacing-sm);
+  top: calc(50% - 7.5px);
+  position: absolute;
+  display: none;
+}
+
+.Icon--error {
+  fill: #B62F11;
+  fill: var(--red-dark);
+}
+
+.Icon--success {
+  fill: #08965D;
+  fill: var(--green-dark);
+}
+
+.SuccessUI {
+  display: none;
 }

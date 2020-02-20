@@ -1,7 +1,7 @@
 const NAIVE_EMAIL_REGEX = /^\S+@+.+\w{2,}$/
 
-const ValidationResult = (field, status, message) => {
-  return { field, status, message }
+const ValidationResult = (name, valid, message) => {
+  return { name, valid, message }
 }
 
 const notEmpty = (key, value) => {
@@ -19,7 +19,7 @@ const isEmail = (key, value) => {
 const getStatus = (fields) => {
   for (let i = 0; i < fields.length; i++) {
     const field = fields[i]
-    if (!field.status) return false
+    if (!field.valid) return false
   }
   return true
 }
