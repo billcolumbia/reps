@@ -38,7 +38,7 @@
     }
 
     const setupForm = () => {
-      // handleSubmit()
+      handleSubmit()
     }
 
     const lockForm = (lock) => {
