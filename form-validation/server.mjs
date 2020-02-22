@@ -1,6 +1,12 @@
-const express = require('express')
+import {
+  validate,
+  notEmpty,
+  isEmail,
+  fieldsAreValid
+} from './validations.mjs'
+import express from 'express'
 const app = express()
-const Validate = require('./validations.js')
+// const Validate = require('./validations.js')
 
 const formatErrors = (validations) => {
   let message = 'Oops we missed some information:\n'
@@ -11,10 +17,10 @@ const formatErrors = (validations) => {
   return message + 'If we had a templating language we could make this look much nicer!'
 }
 
-const simpleResponse = (valid, validations) => {
-  return valid
+const simpleResponse = (result) => {
+  return result.valid
     ? 'Successfully Registered!'
-    : formatErrors(validations)
+    : formatErrors(result.validations)
 }
 
 app.use(express.static('public'))
@@ -23,16 +29,17 @@ app.use(express.urlencoded({ extended: true }))
 app.post('/handle-register', function (req, res) {
   const { username, email, password, XHR } = req.body
 
-  let validations = [
-    Validate.notEmpty('username', username),
-    Validate.isEmail('email', email),
-    Validate.notEmpty('password', password)
-  ]
+  const result = fieldsAreValid([
+    validate({ name: 'Username', value: username }, notEmpty),
+    validate({ name: 'Email', value: email }, isEmail),
+    validate({ name: 'Password', value: password }, notEmpty)
+  ])
 
-  const valid = Validate.getStatus(validations)
+  console.log(result)
+
   XHR
-    ? res.json(JSON.stringify({ valid, validations}))
-    : res.send(simpleResponse(valid, validations))
+    ? res.json(JSON.stringify(result))
+    : res.send(simpleResponse(result))
 })
 
 app.listen(5000)
